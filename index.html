@@ -35,17 +35,25 @@
                     <li><a class="active"
                             href="#home">Home</a></li>
                     <li><a href="#expertise">My Expertise</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#work">Work</a></li>
                     <li><a href="#resume">Resume</a></li>
-                    <li><a href="#clients">Clients</a></li>
                     <li><a href="#pricing">Pricing</a></li>
                     <li><a href="#blog">Blog</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
-            <button onclick="ToggleSideMenu()"
-                class="menu-bar"><i id="menuIcon"
-                    class="fa-solid fa-bars"></i></button>
+            <!-- Button to Open Menu -->
+            <button id="menuToggleButton"
+                class="menu-bar">
+                <i id="menuIcon"
+                    class="fa-solid fa-bars"></i>
+            </button>
+
+            <!-- Close Button -->
+            <button id="closeMenuButton"
+                class="close-menu">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
         </nav>
         <nav>
             <div id="sideMenu"
@@ -53,9 +61,8 @@
                 <ul class="d-flex-justify-start-column">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#expertise">My Expertise</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#work">Work</a></li>
                     <li><a href="#resume">Resume</a></li>
-                    <li><a href="#clients">Clients</a></li>
                     <li><a href="#pricing">Pricing</a></li>
                     <li><a href="#blog">Blog</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -82,7 +89,6 @@
                     </div>
                     <div class="bottom">
                         <div class="left">
-                            <h3>Find me on:</h3>
                             <div class="cards">
 
                                 <a class="social-card"
@@ -92,29 +98,13 @@
 
                                 <a class="social-card"
                                     href="#"><i class="fa-brands fa-linkedin"></i></a>
+                                <a class="social-card"
+                                    href="#"><i class="fa-brands fa-github"></i></a>
                             </div>
                         </div>
                         <div class="right">
-                            <h3>Best Skill on:</h3>
                             <div class="cards">
-                                <div class="skill-card">
-                                    <i class="fa-brands fa-html5"></i>
-                                </div>
-                                <div class="skill-card">
-                                    <i class="fa-brands fa-css3"></i>
-                                </div>
-                                <div class="skill-card">
-                                    <i class="fa-brands fa-js"></i>
-                                </div>
-                                <div class="skill-card">
-                                    <i class="fa-brands fa-react"></i>
-                                </div>
-                                <div class="skill-card">
-                                    <i class="fa-brands fa-node-js"></i>
-                                </div>
-                                <div class="skill-card">
-                                    <i class="fa-brands fa-figma"></i>
-                                </div>
+                                <button>My Resume <i class="fa-solid fa-download"></i></button>
                             </div>
                         </div>
                     </div>
@@ -145,41 +135,69 @@
                 <img src="/assets/icons/cms-system.gif"
                     alt="wordpress">
                 <h3>WordPress Theme Customization</h3>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. In nulla accusamus quia reprehenderit
-                    illum omnis ducimus soluta suscipit rem minima.</p>
+                <ul>
+                    <li>⭐ Proficient in PHP, CSS, HTML, and JavaScript for WordPress theme modifications.</li>
+                    <li>⭐ Familiarity with WordPress Theme Development Standards and Codex.</li>
+                    <li>⭐ Experience with Advanced Custom Fields (ACF) and Custom Post Types (CPT).</li>
+                    <li>⭐ Skilled in modifying and optimizing pre-built themes like Astra, Divi, and Elementor.</li>
+                    <li>⭐ Understanding of responsive design and cross-browser compatibility.</li>
+                    <li>⭐ Experience with theme frameworks (Genesis, Understrap, etc.).</li>
+                    <li>⭐ Proficiency in managing child themes for safe customization.</li>
+                </ul>
+
             </div>
             <div class="feature">
                 <img src="/assets/icons/physics.gif"
                     alt="wordpress">
                 <h3>HTML To React</h3>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. In nulla accusamus quia reprehenderit
-                    illum omnis ducimus soluta suscipit rem minima.</p>
+                <ul>
+                    <li>⭐ Strong knowledge of React.js, JSX, and functional components.</li>
+                    <li>⭐ Proficiency in converting static HTML into dynamic React components.</li>
+                    <li>⭐ Experience with state management tools like Redux and Context API.</li>
+                    <li>⭐ Understanding of React hooks like <code>useState</code>, <code>useEffect</code>, and
+                        <code>useContext</code>.
+                    </li>
+                    <li>⭐ Skilled in setting up and using React Router for single-page applications.</li>
+                    <li>⭐ Familiarity with responsive design frameworks (Bootstrap, TailwindCSS).</li>
+                    <li>⭐ Ability to write reusable and scalable components.</li>
+                </ul>
+
             </div>
             <div class="feature">
                 <img src="/assets/icons/coding.gif"
                     alt="wordpress">
                 <h3>Figma, PSD, XD To HTML</h3>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. In nulla accusamus quia reprehenderit
-                    illum omnis ducimus soluta suscipit rem minima.</p>
-            </div>
-            <div class="feature">
-                <img src="/assets/icons/coding.gif"
-                    alt="wordpress">
-                <h3>Figma, PSD, XD To HTML</h3>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. In nulla accusamus quia reprehenderit
-                    illum omnis ducimus soluta suscipit rem minima.</p>
+                <ul>
+                    <li>⭐ Expertise in converting design files (Figma, PSD, XD, AI) into clean, semantic HTML and CSS.
+                    </li>
+                    <li>⭐ Proficiency in modern CSS frameworks (TailwindCSS, Bootstrap, SASS).</li>
+                    <li>⭐ Skilled in ensuring pixel-perfect conversion with responsive design.</li>
+                    <li>⭐ Experience with animations using CSS and JavaScript (GSAP, Framer Motion).</li>
+                    <li>⭐ Familiarity with accessibility standards (WCAG).</li>
+                    <li>⭐ Knowledge of version control tools like Git for collaborative work.</li>
+                </ul>
+
             </div>
             <div class="feature">
                 <img src="/assets/icons/around-the-world.gif"
                     alt="wordpress">
                 <h3>Web Application</h3>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. In nulla accusamus quia reprehenderit
-                    illum omnis ducimus soluta suscipit rem minima.</p>
+                <ul>
+                    <li>⭐ Proficient in developing full-stack applications using MongoDB, Express.js, React.js, and
+                        Node.js.</li>
+                    <li>⭐ Strong understanding of RESTful API design and implementation.</li>
+                    <li>⭐ Experience with state management tools (Redux, MobX, Context API).</li>
+                    <li>⭐ Knowledge of JWT authentication and authorization.</li>
+                    <li>⭐ Skilled in integrating third-party APIs and libraries.</li>
+                    <li>⭐ Familiarity with deployment platforms (Heroku, AWS, Vercel).</li>
+                    <li>⭐ Experience with version control systems like Git and GitHub.</li>
+                </ul>
+
             </div>
         </div>
     </section>
     <!-- Title Portfolio -->
-    <section id="portfolio"
+    <section id="work"
         class="title-section text-center">
         <div class="container">
             <h4>Visit and Drop a Feedback</h4>
@@ -542,10 +560,12 @@
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script>
         var typed = new Typed(".autoType", {
-            strings: ["Developer", "Professional Coder"],
-            typeSpeed: 120,
-            backSpeed: 110,
+            strings: ["JavaScript Developer", "Professional Coder", "Web Developer"],
+            typeSpeed: 40,
+            backSpeed: 20,
             loop: true,
+            backDelay: 1200,
+            startDelay: 30
         });
     </script>
 </body>

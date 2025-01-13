@@ -1,4 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap");
+
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
 body {
   font-family: "Source Code Pro", serif;
   font-size: var(--font-size-md);
@@ -16,6 +26,7 @@ body {
   --color-primary: #2c3e50; /* Dark Blue */
   --color-secondary: #34495e; /* Muted Blue */
   --color-accent: #e67e22; /* Vibrant Orange */
+  --color-accent-dark: #98602f; /* Vibrant Orange */
   --color-light: #ecf0f1; /* Light Gray */
   --color-white: #fff;
   --color-dark: #2c3e50; /* Deep Dark */
@@ -45,15 +56,6 @@ body {
   --font-weight-regular: 400;
   --font-weight-medium: 500;
   --font-weight-bold: 700;
-}
-html {
-  overflow: scroll;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-}
-::-webkit-scrollbar {
-  width: 0;
-  background: transparent;
 }
 
 h1,
@@ -112,7 +114,7 @@ a {
 }
 
 a:hover {
-  color: var(--color-dark);
+  color: var(--color-accent-dark);
   font-weight: var(--font-weight-bold);
 }
 
@@ -125,18 +127,18 @@ button {
   font-family: var(--font-primary);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-medium);
-  color: var(--color-light);
-  background-color: var(--color-accent);
-  border: none;
+  color: var(--color-accent);
+  font-weight: var(--font-weight-bold);
+  border: 1.5px solid var(--color-accent);
   padding: 0.75em 1.5em;
-  border-radius: 5px;
+  border-radius: 20px;
   cursor: pointer;
   transition: ease-in-out 0.5s;
 }
 
 button:hover {
-  background-color: darken(var(--color-accent), 10%);
-  color: var(--color-accent);
+  background-color: var(--color-accent);
+  color: var(--color-light);
 }
 .uppercase {
   text-transform: uppercase;
@@ -182,6 +184,7 @@ ul {
   font-family: var(--font-primary);
   line-height: var(--line-height-body);
   color: var(--color-dark);
+  margin-left: -38px;
 }
 
 ul li {
@@ -194,14 +197,14 @@ ul li::marker {
 }
 
 ul li:hover {
-  color: var(--color-primary);
+  color: var(--color-accent-dark);
   cursor: pointer;
 }
 
 /* Nested Lists */
 ul ul {
   list-style-type: circle;
-  margin: 0.5em 0 0.5em 1.5em;
+  /* margin: 0.5em 0 0.5em 1.5em; */
 }
 
 ul ul li {
@@ -285,17 +288,27 @@ ul ul li {
 .menu-bar {
   display: none;
 }
+/* .menu-bar.fixed {
+  position: fixed;
+  top: 26px;
+  right: 43px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  text-align: center;
+  background: transparent;
+  border: none;
+} */
 .side-menu {
   background: var(--color-primary);
-  padding: 15px 0px;
+  padding: 15px 0px 0px 17px;
   width: 70%;
   height: 100%;
-  z-index: 99;
+  z-index: 200;
   position: fixed;
   top: 0;
   left: 0;
-  margin-left: -9999px;
-  transition: ease-in-out 0.5s;
+  margin-left: -999px;
   box-shadow: var(--box-shadow);
 }
 
@@ -316,7 +329,7 @@ ul ul li {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: start;
   align-items: center;
   gap: 20px;
 }

@@ -1,13 +1,14 @@
 let isOpenSideBar = false;
 const menuIcon = document.getElementById("menuIcon");
-const sideMenu = document.getElementById("sideMenu");
+const menuToggle = document.querySelector(".menu-bar");
 const overlay = document.querySelector(".overlay");
 
-// need to study
+// select all menus
 const menuLinks = document.querySelectorAll(".menu a");
-const sections = document.querySelectorAll("section"); // All sections
+// select all sections
+const sections = document.querySelectorAll("section");
 
-// Function to remove active class from all menu items
+// Initial, Function to remove active class from all menu items
 function removeActiveClasses() {
   menuLinks.forEach((link) => link.classList.remove("active"));
 }
@@ -18,7 +19,7 @@ function setActiveMenu() {
 
   // Check each section's position relative to the viewport
   sections.forEach((section) => {
-    const sectionTop = section.offsetTop - 100; // Adjust offset for smoothness
+    const sectionTop = section.offsetTop - 200;
     const sectionHeight = section.offsetHeight;
 
     if (
@@ -45,20 +46,40 @@ menuLinks.forEach((link) => {
   });
 });
 
-function ToggleSideMenu() {
-  isOpenSideBar = !isOpenSideBar;
-  if (isOpenSideBar) {
-    sideMenu.style.marginLeft = 0;
-    menuIcon.className = "fa-solid fa-xmark";
-    overlay.classList.add("active");
-    document.body.classList.add("no-scroll");
-  } else {
+const menuToggleButton = document.getElementById("ToggleSideMenu");
+const sideMenu = document.getElementById("sideMenu");
+const closeMenu = document.getElementById("closeMenu");
+// Open side menu event listener
+menuToggleButton.addEventListener("click", () => {
+  sideMenu.style.marginLeft = 0;
+  sideMenu.style.transition = "ease-in-out 0.5s";
+  overlay.classList.add("active");
+  menuToggleButton.style.display = "none";
+  closeMenu.style.display = "block";
+  document.body.classList.add("no-scroll");
+});
+closeMenu.addEventListener("click", () => {
+  sideMenu.style.marginLeft = "-9999px";
+  closeMenu.style.display = "none";
+  // menuToggleButton.style.display = "block";
+  overlay.classList.remove("active");
+});
+// Close Side menu event listener
+sideMenu.addEventListener("click", (event) => {
+  if (event.target.tagName === "A") {
     sideMenu.style.marginLeft = "-999px";
-    menuIcon.className = "fa-solid fa-bars";
     overlay.classList.remove("active");
     document.body.classList.remove("no-scroll");
   }
-}
+});
+
+// function ToggleSideMenu() {
+//   isOpenSideBar = !isOpenSideBar;
+//   if (isOpenSideBar) {
+//   } else {
+//     sideMenu.style.marginLeft = "-9999px";
+//   }
+// }
 
 // Select the navbar
 const navbar = document.querySelector(".primary-menu");
