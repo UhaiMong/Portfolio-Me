@@ -229,7 +229,7 @@ ul ul li {
   opacity: 1;
 }
 .no-scroll {
-  overflow-y: hidden;
+  overflow: hidden;
 }
 .profile img {
   width: 50px;
@@ -263,6 +263,12 @@ ul ul li {
   align-items: center;
   gap: 20px;
 }
+.d-flex-justify-end {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 20px;
+}
 .d-flex-justify-start-column {
   display: flex;
   justify-content: start;
@@ -288,27 +294,21 @@ ul ul li {
 .menu-bar {
   display: none;
 }
-/* .menu-bar.fixed {
-  position: fixed;
-  top: 26px;
-  right: 43px;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  text-align: center;
-  background: transparent;
-  border: none;
-} */
-.side-menu {
+.close-menu {
+  display: none;
+  z-index: 200;
+}
+
+.mobile-devices-menu {
   background: var(--color-primary);
   padding: 15px 0px 0px 17px;
   width: 70%;
-  height: 100%;
+  height: 100vh;
   z-index: 200;
+  margin-left: -9999px;
   position: fixed;
   top: 0;
   left: 0;
-  margin-left: -999px;
   box-shadow: var(--box-shadow);
 }
 
@@ -433,10 +433,15 @@ ul ul li {
 .pricing-content.hidden {
   display: none;
 }
+.portfolio img,
+.blog img {
+  transition: ease-in 0.5s;
+}
 .feature:hover,
-.portfolio:hover,
-.blog:hover {
+.portfolio:hover img,
+.blog:hover img {
   background: var(--color-light);
+  opacity: 0.8;
   transform: scale(1.02);
 }
 .feature img {
@@ -446,8 +451,15 @@ ul ul li {
   object-fit: cover;
 }
 .portfolio img,
-.blog img {
+.blog img,
+.work-image img {
   width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+.work-image,
+.work-content {
+  width: 50%;
 }
 .pricing-contents {
   width: 70%;
@@ -495,6 +507,50 @@ ul ul li {
 }
 .contact-list .list-item {
   font-size: 12px;
+}
+/* Modal CSS */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  position: relative;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  max-width: 80%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  box-shadow: var(--box-shadow);
+  font-size: 1.5em;
+  cursor: pointer;
+  transition: ease 0.5s;
+}
+.close:hover {
+  background-color: var(--color-accent);
+  color: var(--color-light);
 }
 
 /* Scroll to Top */

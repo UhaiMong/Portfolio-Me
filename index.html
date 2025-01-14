@@ -7,10 +7,10 @@
         content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Uhai Mong</title>
     <link rel="stylesheet"
-        href="/css/style.css">
+        href="./css/style.css">
     <!-- favicon -->
     <link rel="shortcut icon"
-        href="/assets/icons/favicon.ico"
+        href="./assets/icons/favicon.ico"
         type="image/x-icon">
     <!-- Font awesome Script -->
     <script src="https://kit.fontawesome.com/4d5669a12e.js"
@@ -25,7 +25,7 @@
             <a href="/index.html">
                 <div class="profile"
                     style="display: flex; justify-content: start; align-items: center; gap: 15px;"><img
-                        src="/assets/images/profile_uhai.png"
+                        src="./assets/images/profile_uhai.png"
                         alt="Uhai Profile picture">
                     <h3>Uhai</h3>
                 </div>
@@ -55,9 +55,11 @@
                 <i class="fa-solid fa-xmark"></i>
             </button>
         </nav>
+    </section>
+    <section id="sideMenu"
+        class="mobile-devices-menu">
         <nav>
-            <div id="sideMenu"
-                class="side-menu">
+            <div>
                 <ul class="d-flex-justify-start-column">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#expertise">My Expertise</a></li>
@@ -110,12 +112,12 @@
                     </div>
                 </div>
                 <div class="banner-bg md-d-none">
-                    <div class="banner-image"><img src="/assets/images/banner2.png"
+                    <div class="banner-image"><img src="./assets/images/banner2.png"
                             alt="My image"></div>
 
                 </div>
                 <div class="for-mobile-view">
-                    <img src="assets/images/Profile_Uhai_750x750.png"
+                    <img src="./assets/images/Profile_Uhai_750x750.png"
                         alt="">
                 </div>
             </div>
@@ -132,7 +134,7 @@
     <section class="container">
         <div class="features">
             <div class="feature">
-                <img src="/assets/icons/cms-system.gif"
+                <img src="./assets/icons/cms-system.gif"
                     alt="wordpress">
                 <h3>WordPress Theme Customization</h3>
                 <ul>
@@ -147,7 +149,7 @@
 
             </div>
             <div class="feature">
-                <img src="/assets/icons/physics.gif"
+                <img src="./assets/icons/physics.gif"
                     alt="wordpress">
                 <h3>HTML To React</h3>
                 <ul>
@@ -164,7 +166,7 @@
 
             </div>
             <div class="feature">
-                <img src="/assets/icons/coding.gif"
+                <img src="./assets/icons/coding.gif"
                     alt="wordpress">
                 <h3>Figma, PSD, XD To HTML</h3>
                 <ul>
@@ -179,7 +181,7 @@
 
             </div>
             <div class="feature">
-                <img src="/assets/icons/around-the-world.gif"
+                <img src="./assets/icons/around-the-world.gif"
                     alt="wordpress">
                 <h3>Web Application</h3>
                 <ul>
@@ -196,6 +198,7 @@
             </div>
         </div>
     </section>
+
     <!-- Title Portfolio -->
     <section id="work"
         class="title-section text-center">
@@ -207,7 +210,7 @@
     <section class="container">
         <div class="portfolios">
             <div class="portfolio">
-                <img src="/assets/portfolio/HeroShopMockupAngle.png"
+                <img src="./assets/portfolio/HeroShopMockupAngle.png"
                     alt="wordpress">
                 <div>
                     <div class="d-flex-justify-between">
@@ -218,7 +221,7 @@
                 </div>
             </div>
             <div class="portfolio">
-                <img src="/assets/portfolio/portFolioProfileRightAngle.png"
+                <img src="./assets/portfolio/portFolioProfileRightAngle.png"
                     alt="wordpress">
                 <div>
                     <div class="d-flex-justify-between">
@@ -226,6 +229,36 @@
                         <span><i class="fa-solid fa-thumbs-up"></i> 190</span>
                     </div>
                     <h3 class="title">Personal Portfolio</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Project -->
+
+    <section class="container">
+        <div class="work-wrapper d-flex-justify-between">
+            <div class="work-content">
+                <h2 class="work-no">01</h2>
+                <h2 class="work-title">Responsive frontend E-commerce</h2>
+                <p class="work-detail">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure quod commodi
+                    tempora omnis provident, porro animi repudiandae vitae. Necessitatibus, natus?</p>
+                <h3 class="languages">HTML, CSS, JavaScript</h3>
+                <hr>
+                <div>
+
+                    <a href="https://www.netlify.app/myproject.web"
+                        target="_blank"><i class="fa-solid fa-square-arrow-up-right"></i></a>
+                    <a href="https://www.github.com/UhaiMong/project1"
+                        target="_blank"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+            <div class="work-image">
+                <img src="./assets/portfolio/HeroShopMockupAngle.png"
+                    alt="Portfolio">
+                <div class="d-flex-justify-end">
+                    <button><i class="fa-solid fa-angle-left"></i></button>
+                    <button><i class="fa-solid fa-angle-right"></i></button>
                 </div>
             </div>
         </div>
@@ -398,62 +431,7 @@
             </div>
         </section>
     </section>
-    <!-- Title Blog-->
-    <section id="blog"
-        class="title-section text-center">
-        <div class="container">
-            <h4>Visit, read, and leave a Feedback</h4>
-            <h2>Recent Blog</h2>
-        </div>
-    </section>
-    <section class="container">
-        <div class="blogs">
-            <div class="blog">
-                <img src="/assets/images/blog-big-01.jpg"
-                    alt="About CSS tricks">
-                <div>
-                    <div class="d-flex-justify-between">
-                        <h6>Development</h6>
-                        <span><i class="fa-solid fa-thumbs-up"></i> 190</span>
-                    </div>
-                    <h3 class="title">Secrete top 10 css tricks</h3>
-                </div>
-            </div>
-            <div class="blog">
-                <img src="/assets/images/blog-02.jpg"
-                    alt="About JS DOM">
-                <div>
-                    <div class="d-flex-justify-between">
-                        <h6>JavaScript</h6>
-                        <span><i class="fa-solid fa-thumbs-up"></i> 190</span>
-                    </div>
-                    <h3 class="title">JavaScript DOM Manipulation</h3>
-                </div>
-            </div>
-            <div class="blog">
-                <img src="/assets/images/blog-03.jpg"
-                    alt="JavaScript Function">
-                <div>
-                    <div class="d-flex-justify-between">
-                        <h6>JavaScript</h6>
-                        <span><i class="fa-solid fa-thumbs-up"></i> 190</span>
-                    </div>
-                    <h3 class="title">All types of JS function</h3>
-                </div>
-            </div>
-            <div class="blog">
-                <img src="/assets/images/blog-03.jpg"
-                    alt="JavaScript Function">
-                <div>
-                    <div class="d-flex-justify-between">
-                        <h6>JavaScript</h6>
-                        <span><i class="fa-solid fa-thumbs-up"></i> 190</span>
-                    </div>
-                    <h3 class="title">All types of JS function</h3>
-                </div>
-            </div>
-        </div>
-    </section>
+
     <!-- Title Contact Me-->
     <section id="contact"
         class="title-section text-center">
@@ -505,7 +483,7 @@
             </form>
             <!-- Left contact page -->
             <div class="direct-contact box-shadow">
-                <img src="/assets/images/contact1.png"
+                <img src="./assets/images/contact1.png"
                     alt="Contact">
                 <a href="#"> <i class="fa fa-map-marker"></i> Chittogong,
                     Bangladesh</a>
@@ -530,6 +508,54 @@
         </div>
 
     </section>
+    <!-- Title Blog-->
+    <section id="blog"
+        class="title-section text-center">
+        <div class="container">
+            <h4>Visit, read, and leave a Feedback</h4>
+            <h2>Recent Blog</h2>
+        </div>
+    </section>
+    <section class="container">
+        <div class="blogs">
+            <div class="blog">
+                <img src="./assets/images/blog-big-01.jpg"
+                    alt="About CSS tricks">
+                <div>
+                    <div class="d-flex-justify-between">
+                        <h6>Development</h6>
+                    </div>
+                    <a href="https://shorturl.at/QHjE8"
+                        target="_blank">
+                        <h3 class="title">If you a developer, must be known React.js key topics.</h3>
+                    </a>
+                    <p class="blogContent">React.js is a powerful JavaScript library for building user interfaces. To
+                        get started with
+                        React, there are several key
+                        topics that you should be familiar with</p>
+                    <a href="https://shorturl.at/QHjE8"
+                        target="_blank">Read More</a>
+                </div>
+            </div>
+            <div class="blog">
+                <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*IV6diQ5N05b8DKm01cATag.png"
+                    alt="About CSS tricks">
+                <div>
+                    <div class="d-flex-justify-between">
+                        <h6>Content</h6>
+                    </div>
+                    <a href="https://shorturl.at/Ixtne"
+                        target="_blank">
+                        <h3 class="title">At a Glance is the most useful platform, a beginner guide for using purpose.
+                        </h3>
+                    </a>
+                    <p class="blogContent">1. Personal Social Network: Connect and interact with friends, family, and
+                        professionals.</p>
+                    <a href="https://shorturl.at/Ixtne"
+                        target="_blank">Read More</a>
+                </div>
+            </div>
+    </section>
 
     <!-- footer -->
     <div class="container">
@@ -541,7 +567,7 @@
                 <a href="/index.html">
                     <div class="profile"
                         style="display: flex; justify-content: start; align-items: center; gap: 15px;"><img
-                            src="/assets/images/profile_uhai.png"
+                            src="./assets/images/profile_uhai.png"
                             alt="Uhai Profile picture">
                         <h3>Uhai</h3>
                     </div>
@@ -551,12 +577,24 @@
         </footer>
     </section>
 
+    <!-- Dynamic Modal -->
+    <section class="container">
+        <div class="modal"
+            id="modal">
+            <div class="modal-content">
+                <div class="close"><i class="fa-solid fa-xmark"></i></div>
+                <h2 id="modal-title">Default Title</h2>
+                <p id="modal-body">Default content goes here.</p>
+            </div>
+        </div>
+    </section>
+    <!-- Scroll to top button -->
     <button id="scrollTop"
         onclick="topFunction()"
         class="scroll-top"><i class="fa-solid fa-arrow-up"></i></button>
 
     <!-- Script src -->
-    <script src="/js/script.js"></script>
+    <script src="./js/script.js"></script>
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script>
         var typed = new Typed(".autoType", {

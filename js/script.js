@@ -46,9 +46,9 @@ menuLinks.forEach((link) => {
   });
 });
 
-const menuToggleButton = document.getElementById("ToggleSideMenu");
+const menuToggleButton = document.getElementById("menuToggleButton");
 const sideMenu = document.getElementById("sideMenu");
-const closeMenu = document.getElementById("closeMenu");
+const closeMenu = document.getElementById("closeMenuButton");
 // Open side menu event listener
 menuToggleButton.addEventListener("click", () => {
   sideMenu.style.marginLeft = 0;
@@ -61,7 +61,7 @@ menuToggleButton.addEventListener("click", () => {
 closeMenu.addEventListener("click", () => {
   sideMenu.style.marginLeft = "-9999px";
   closeMenu.style.display = "none";
-  // menuToggleButton.style.display = "block";
+  menuToggleButton.style.display = "block";
   overlay.classList.remove("active");
 });
 // Close Side menu event listener
@@ -72,14 +72,6 @@ sideMenu.addEventListener("click", (event) => {
     document.body.classList.remove("no-scroll");
   }
 });
-
-// function ToggleSideMenu() {
-//   isOpenSideBar = !isOpenSideBar;
-//   if (isOpenSideBar) {
-//   } else {
-//     sideMenu.style.marginLeft = "-9999px";
-//   }
-// }
 
 // Select the navbar
 const navbar = document.querySelector(".primary-menu");
@@ -150,4 +142,50 @@ document.querySelector("#contact-form").addEventListener("submit", (e) => {
   e.target.elements.message.value = "";
 });
 
-// Auto Type
+// Select modal elements
+const modal = document.getElementById("modal");
+const modalTitle = document.getElementById("modal-title");
+const modalBody = document.getElementById("modal-body");
+const closeModal = document.querySelector(".close");
+const openButtons = document.querySelectorAll(".open-modal");
+
+// Function to open modal and update content
+openButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const title = button.getAttribute("data-title");
+    const content = button.getAttribute("data-content");
+    modalTitle.textContent = title;
+    modalBody.textContent = content;
+    modal.style.display = "flex";
+    document.body.classList.add("no-scroll");
+  });
+});
+//truncate text
+document.addEventListener("DOMContentLoaded", function () {
+  const contentElements = document.querySelectorAll(".blogContent"); // Select all elements with the class "content"
+
+  contentElements.forEach((element) => {
+    const fullText = element.textContent;
+
+    // Truncate to the first 20 characters
+    const truncatedText =
+      fullText.length > 20 ? fullText.substring(0, 40) + "..." : fullText;
+
+    // Update the content
+    element.textContent = truncatedText;
+  });
+});
+
+// Close modal
+closeModal.addEventListener("click", () => {
+  modal.style.display = "none";
+  document.body.classList.remove("no-scroll");
+});
+
+// Close modal when clicking outside the content
+window.addEventListener("click", (event) => {
+  if (event.target === modal) {
+    modal.style.display = "none";
+    document.body.classList.remove("no-scroll");
+  }
+});
