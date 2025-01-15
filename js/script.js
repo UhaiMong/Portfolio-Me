@@ -189,3 +189,80 @@ window.addEventListener("click", (event) => {
     document.body.classList.remove("no-scroll");
   }
 });
+
+// Slide
+const slides = document.querySelector(".slide");
+const prevButton = document.getElementById("prev");
+const nextButton = document.getElementById("next");
+const totalSlides = slides.children.length;
+let currentIndex = 0;
+let startX = 0;
+let endX = 0;
+let autoSlideInterval;
+
+// Helper function to update the slide position
+function updateSlidePosition() {
+  slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+}
+
+// Go to the next slide
+function nextSlide() {
+  currentIndex = (currentIndex + 1) % totalSlides;
+  updateSlidePosition();
+}
+
+// Go to the previous slide
+function prevSlide() {
+  currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+  updateSlidePosition();
+}
+
+// Set up auto-slide
+function startAutoSlide() {
+  autoSlideInterval = setInterval(nextSlide, 5000);
+}
+
+// Stop auto-slide
+function stopAutoSlide() {
+  clearInterval(autoSlideInterval);
+}
+
+// Add touch event listeners
+slides.addEventListener("touchstart", (e) => {
+  stopAutoSlide();
+  startX = e.touches[0].clientX;
+});
+
+slides.addEventListener("touchmove", (e) => {
+  endX = e.touches[0].clientX;
+});
+
+slides.addEventListener("touchend", () => {
+  const distance = endX - startX;
+  if (distance > 50) {
+    prevSlide();
+  } else if (distance < -50) {
+    nextSlide();
+  }
+  startAutoSlide();
+});
+// stop slide on mouseover
+// slides.addEventListener("onmouseover", stopAutoSlide);
+// Resume auto slide on mouseout
+// slides.addEventListener("mouseout", startAutoSlide);
+// Add click event listeners
+prevButton.addEventListener("click", () => {
+  stopAutoSlide();
+  prevSlide();
+  startAutoSlide();
+});
+
+nextButton.addEventListener("click", () => {
+  stopAutoSlide();
+  nextSlide();
+  startAutoSlide();
+});
+
+// Initialize the slider
+updateSlidePosition();
+startAutoSlide();
